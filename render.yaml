@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: polymarket-split-merge-arb
+    env: node
+    region: frankfurt
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: TRADING_MODE
+        value: SIMULATION
+      - key: AUTO_TRADE_SIZE
+        value: "5.0"
+      - key: MIN_PROFIT_SPREAD_BPS
+        value: "80"
+      - key: POLYMARKET_FUNDER_ADDRESS
+        value: 0xDa5D4Ec61710D78B6ada686946C4b0fd06FD3863
+      - key: POLYMARKET_PRIVATE_KEY
+        sync: false
